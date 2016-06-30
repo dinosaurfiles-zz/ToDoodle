@@ -162,6 +162,11 @@ return [
         Collective\Html\HtmlServiceProvider::class,
 
         /**
+         * Laracast Flash Notifications Providers
+         */
+        Laracasts\Flash\FlashServiceProvider::class,
+
+        /**
          * Custom Service Providers
          */
         ToDoodle\BackendServiceProvider::class,
@@ -218,6 +223,10 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
 
+        /**
+         * Laracast Flash Notifications Aliases
+         */
+        'Flash' => Laracasts\Flash\Flash::class,
     ],
 
 ];
