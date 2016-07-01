@@ -18,10 +18,23 @@
 	width: 100%;
 }
 
+.li-note a h1 {
+	margin-top: 10px;
+}
+
 .li-note {
 	margin: 0px 10px; 
 	word-break: break-all; 
 	word-wrap: break-word;
+	border-bottom: 1px #888888 solid;
+}
+
+.li-note-option {
+	margin-bottom: 10px;
+}
+
+.li-note-option a {
+	margin: 0px 10px;
 }
 
 .note-checked {
@@ -31,3 +44,20 @@
 .notes-header-edit {
 	padding: 0px 30px 20px;
 }
+
+.reddish {
+	color: #D9534F;
+}
+
+.reddish:hover {
+	color: #C9302C;
+}
+
+.greenish {
+	color: #5CB85C;
+}
+
+.greenish:hover {
+	color: #449D44;
+}
+

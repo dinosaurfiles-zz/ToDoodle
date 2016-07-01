@@ -16,27 +16,25 @@
 					</li>
 					@foreach ($notes as $note)
 					<li class="text-center li-note">
-						<a href="{!! action('NotesController@check', ['id' => $note->id]) !!}">
-							<h1>
-								{!! $note->title !!}
+							@if ($note->status == 0)
+							<a href="{!! action('NotesController@check', ['id' => $note->id]) !!}">
+								<h1>
+									<i class="fa fa-square-o note-check-box" style="float: left"></i>
+									{!! $note->title !!}
+								</h1>
+							</a>
+							@else
+							<h1 class="note-checked">
+								<i class="fa fa-check-square-o" style="float: left"></i>
+								<s>{!! $note->title !!}</s>
 							</h1>
-						</a>
+							@endif
 
 						<div class="li-note-option">
-							<a href="{!! action('NotesController@edit', ['id' => $note->id]) !!}" data-target="{!! $note->id !!}"><i class="fa fa-pencil-square-o" class="note-edit-option"></i> Edit</a>
-							<a href="{!! action('NotesController@destroy', ['id' => $note->id]) !!}" style="margin-left: 20px"><i class="fa fa-trash-o"></i> Delete</a>
-						</div>
-					</li>
-					@endforeach
-
-					@foreach ($checkedNotes as $checkedNote)
-					<li class="text-center li-note">
-						<h1 class="note-checked">
-							<s>{!! $checkedNote->title !!}</s>
-						</h1>
-
-						<div class="li-note-option">
-							<a href="{!! action('NotesController@destroy', ['id' => $checkedNote->id]) !!}"><i class="fa fa-trash-o"></i> Delete</a>
+							@if ($note->status == 0)
+							<a href="{!! action('NotesController@edit', ['id' => $note->id]) !!}" class="greenish"><i class="fa fa-pencil-square-o" class="note-edit-option"></i> Edit</a>
+							@endif
+							<a href="{!! action('NotesController@destroy', ['id' => $note->id]) !!}" class="reddish"><i class="fa fa-trash-o"></i> Delete</a>
 						</div>
 					</li>
 					@endforeach
@@ -70,19 +68,21 @@
 	<script>
 		$(document).ready(function(){
 			$('.li-note-option').hide();
+			$('.note-check-box').css("opacity", "0.0");
 
 			$('#alert-div').delay(2000).slideUp('fast');
 
 			$('.li-note').hover(function(){
 				$(this).find('.li-note-option').slideDown('fast');
+				$(this).find('.note-check-box').css("opacity", "1.0");
 			}, function(){
 				$(this).find('.li-note-option').slideUp('slow');
+				$(this).find('.note-check-box').css("opacity", "0.0");
 			});
 
 			$('.note-edit-option').hover(function(){
 				console.log($(this).attrib('data-target'));
 			});
-
 		});
 	</script>
 @endsection

@@ -12,5 +12,15 @@ class BackendServiceProvider extends ServiceProvider
 			'ToDoodle\Note\Contracts\NoteRepositoryInterface',
 			'ToDoodle\Note\Repositories\NoteRepository'
 		);
+
+		$this->app->bind(
+			'ToDoodle\MainRepositoryInterface',
+			'ToDoodle\Note\Repositories\NoteRepository'
+		);
+
+		$this->app->bind(
+			'ToDoodle\MainRepositoryInterface',
+			'ToDoodle\MainRepository'
+		);
 	}
 }
