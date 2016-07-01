@@ -13,3 +13,7 @@
 
 Route::get('/', 'NotesController@index');
 Route::post('store', 'NotesController@store');
+Route::get('{id}', 'NotesController@check');
+Route::get('{id}/destroy', 'NotesController@destroy');
+Route::get('{id}/edit', 'NotesController@edit');
+Route::patch('{id}', 'NotesController@update');

@@ -1,0 +1,33 @@
+.notes-header {
+	background-color: #272932;
+	color: white; 
+	border-radius: 5px;
+}
+
+.notes-header-title {
+	margin: 10px 0px;
+}
+
+.notes-row-div {
+	margin: 0px 10px; 
+	background-color: #E7ECEF; 
+	border-radius: 0px 0px 5px 5px;
+}
+
+.note-new-button {
+	width: 100%;
+}
+
+.li-note {
+	margin: 0px 10px; 
+	word-break: break-all; 
+	word-wrap: break-word;
+}
+
+.note-checked {
+	color: gray;
+}
+
+.notes-header-edit {
+	padding: 0px 30px 20px;
+}
